@@ -7,6 +7,6 @@ function admin_theme_locations(){
 }
 function theme_locations(){
 		$CI =& get_instance();
-		$theme_location = $CI->career_template->get_theme_path();
+		$theme_location = $CI->home_template->get_theme_path();
 		return base_url().$theme_location;
 }
