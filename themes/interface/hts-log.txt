@@ -1,0 +1,20 @@
+HTTrack3.48-22+htsswf+htsjava launched on Thu, 15 Dec 2016 02:36:53 at http://sayidan_h1.kenzap.com/homepage-1.html +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qiC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" http://sayidan_h1.kenzap.com/homepage-1.html -O1 "E:\alumni" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+02:36:58	Warning: 	Retry after error -5 (error:00000001:lib(0):func(0):reason(1)) at link https://cdn.linearicons.com/free/1.0.0/icon-font.min.css (from sayidan_h1.kenzap.com/homepage-1.html)
+02:37:10	Error: 	"Not Found" (404) at link sayidan_h1.kenzap.com/css/owl.video.play.png (from sayidan_h1.kenzap.com/css/owl.carousel.css)
+02:37:10	Warning: 	File not parsed, looks like binary: sayidan_h1.kenzap.com/fonts/Montserrat-Regular.otf
+02:37:10	Warning: 	File not parsed, looks like binary: sayidan_h1.kenzap.com/fonts/Montserrat-Light.otf
+02:37:11	Warning: 	File not parsed, looks like binary: sayidan_h1.kenzap.com/fonts/Montserrat-Bold.otf
+02:37:22	Warning: 	File not parsed, looks like binary: sayidan_h1.kenzap.com/fonts/fontawesome-webfont.woff2?v=4.5.0
+02:37:23	Warning: 	File not parsed, looks like binary: sayidan_h1.kenzap.com/fonts/fontawesome-webfont.ttf?v=4.5.0
+02:37:24	Warning: 	Retry after error -5 (error:00000001:lib(0):func(0):reason(1)) at link https://cdn.linearicons.com/free/1.0.0/icon-font.min.css (from sayidan_h1.kenzap.com/homepage-1.html)
+02:37:50	Error: 	"error:00000001:lib(0):func(0):reason(1)" (-5) after 2 retries at link https://cdn.linearicons.com/free/1.0.0/icon-font.min.css (from sayidan_h1.kenzap.com/homepage-1.html)
+
+HTTrack Website Copier/3.48-22 mirror complete in 57 seconds : 178 links scanned, 173 files written (12713829 bytes overall), 31 files updated [198829 bytes received at 3488 bytes/sec], 904129 bytes transferred using HTTP compression in 31 files, ratio 17%, 17.5 requests per connection
+(2 errors, 7 warnings, 0 messages)
