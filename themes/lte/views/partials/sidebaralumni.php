@@ -1,9 +1,4 @@
 <!-- sidebar: style can be found in sidebar.less -->
-<style type="text/css">
-  .aktif{
-
-  }
-</style>
     <section class="sidebar">
 
       <!-- Sidebar user panel (optional) -->
@@ -17,23 +12,22 @@
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
+
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu">
         <li class="header">HEADER</li>
         <!-- Optionally, you can add icons to the links -->
-        <li  class="<?php if($this->uri->segment(1)=='admin') {echo 'active';} ?> "><a href="<?php echo base_url('admin');?>"><i class="fa fa-tachometer"></i> <span>Dashboard</span></a></li>
-        <li class="treeview <?php if($this->uri->segment(1)=='siswa') {echo 'active';} ?> ">
-          <a href="#"><i class="fa fa-link"></i> <span>Data Siswa</span>
+        <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
+        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
+        <li class="treeview">
+          <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url('siswa/siswa/ak') ?>">Akuntansi</a></li>
-            <li><a href="<?php echo base_url('siswa/siswa/ap') ?>">Administrasi Perkantoran</a></li>
-            <li><a href="<?php echo base_url('siswa/siswa/pm') ?>">Pemasaran</a></li>
-            <li><a href="<?php echo base_url('siswa/siswa/tkj') ?>">Teknik Komunikasi Jaringan</a></li>
-            <li><a href="<?php echo base_url('siswa/siswa/mm') ?>">Multimedia</a></li>
+            <li><a href="#">Link in level 2</a></li>
+            <li><a href="#">Link in level 2</a></li>
           </ul>
         </li>
       </ul>

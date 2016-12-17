@@ -17,3 +17,11 @@
         });
     });
 </script>
+
+<script type="text/javascript">
+setInterval("hide()", 6000);
+function hide(){
+   $("#hide").hide(1000);
+    // alert('tes');
+}
+</script>

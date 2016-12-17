@@ -21,9 +21,23 @@
                                         <button type="submit" class="lnr lnr-magnifier"></button>
                                     </form>
                                 </li>
+                                
+                                <?php if ($this->ion_auth->in_group('admin', $this->session->userdata('user_id'))) { ?>
+                                <li><i><a style="color:white; font-size: 120%;" href="<?php echo base_url('admin')?>"><?php echo $this->session->userdata('first').' '.$this->session->userdata('last');  ?></i></a></li>
                                 <li class="login">
-                                    <a href="login-page.html">Log In</a>
+                                    <a href="<?php echo base_url('login/logout')?>">Log Out</a>
                                 </li>
+                                <?php }elseif ($this->ion_auth->in_group('alumni', $this->session->userdata('user_id'))){ ?>
+                                <li><i><a style="color:white; font-size: 120%;" href="<?php echo base_url('admin')?>"><?php echo $this->session->userdata('first').' '.$this->session->userdata('last');  ?></i></a></li>
+                                <li class="login">
+                                    <a href="<?php echo base_url('login/logout')?>">Log Out</a>
+                                </li>
+                                <?php }else{?>
+                                <li class="login">
+                                    <a href="<?php echo base_url('login')?>">Log In</a>
+                                </li>
+                                    <?php } ?>
+                                
                             </ul>
                         </div>
                     </div>
@@ -32,7 +46,7 @@
             <div class="header-middle">
                 <div class="container">
                     <div class="logo hidden-sm hidden-xs">
-                        <a href="#"> <img src="<?php echo theme_locations();?>images/logo.png" alt="logo"></a>
+                        <a href="<?php echo base_url(); ?>"> <img src="<?php echo theme_locations();?>images/logo.png" alt="logo"></a>
                     </div>
                     <div class="menu">
                         <nav>
