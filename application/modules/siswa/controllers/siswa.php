@@ -18,9 +18,24 @@ class Siswa extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function ak()
+
+	public function data($jurusan,$kelas='')
 	{
 		if ($this->ion_auth->in_group('admin', $this->session->userdata('user_id'))) {
+			if($jurusan=='ak'){
+				$data['jurusan']='Akuntansi';
+			}elseif($jurusan=='ap'){
+				$data['jurusan']='Administrasi Perkantoran';
+			}elseif($jurusan=='pm'){
+				$data['jurusan']='Pemasaran';
+			}elseif($jurusan=='tkj'){
+				$data['jurusan']='Teknik Jaringan & Komputer ';
+			}else{
+				$data['jurusan']='MultiMedia';
+			}
+			
+			$data['kelas']=$kelas;
+			$data['jr']=$jurusan;
 		$this->template
 					->title('Home', 'Datasiswa || Akuntansi')
 					->set_partial('meta', 'partials/meta')	
@@ -29,32 +44,15 @@ class Siswa extends CI_Controller {
 					->set_partial('bc', 'partials/bc')	
 					->set_partial('content', 'siswa/ak')	
 					->set_partial('footer', 'partials/footer')	
-					->set_partial('js', 'partials/js')	
+					->set_partial('js', 'partials/js')
+					->set_partial('content', 'siswa/data_siswa',$data)	
 					->build('admin');
 				}else{
 			redirect('login','refresh');
 		}
 	}
 
-	public function ap()
-	{
-		if($this->ion_auth->in_group('admin', $this->session->userdata('user_id'))) {
-		$this->template
-					->title('Home', 'Datasiswa || Akuntansi')
-					->set_partial('meta', 'partials/meta')	
-					->set_partial('header', 'partials/header')	
-					->set_partial('sidebar', 'partials/sidebar')
-					->set_partial('bc', 'partials/bc')	
-					->set_partial('content', 'siswa/ap')	
-					->set_partial('footer', 'partials/footer')	
-					->set_partial('js', 'partials/js')	
-					->build('admin');
-				}else{
-			redirect('login','refresh');
-		}
-	}
-
-	public function pm()
+	public function tambah_siswa($jurusan,$kelas='')
 	{
 		if ($this->ion_auth->in_group('admin', $this->session->userdata('user_id'))) {
 		$this->template
@@ -63,7 +61,7 @@ class Siswa extends CI_Controller {
 					->set_partial('header', 'partials/header')	
 					->set_partial('sidebar', 'partials/sidebar')
 					->set_partial('bc', 'partials/bc')	
-					->set_partial('content', 'siswa/pm')	
+					->set_partial('content', 'siswa/tambah_siswa')	
 					->set_partial('footer', 'partials/footer')	
 					->set_partial('js', 'partials/js')	
 					->build('admin');
@@ -72,41 +70,7 @@ class Siswa extends CI_Controller {
 		}
 	}
 
-	public function tkj()
-	{
-		if ($this->ion_auth->in_group('admin', $this->session->userdata('user_id'))){
-		$this->template
-					->title('Home', 'Datasiswa || Akuntansi')
-					->set_partial('meta', 'partials/meta')	
-					->set_partial('header', 'partials/header')	
-					->set_partial('sidebar', 'partials/sidebar')
-					->set_partial('bc', 'partials/bc')	
-					->set_partial('content', 'siswa/tkj')	
-					->set_partial('footer', 'partials/footer')	
-					->set_partial('js', 'partials/js')	
-					->build('admin');
-				}else{
-			redirect('login','refresh');
-		}
-	}
 
-	public function mm()
-	{
-		if ($this->ion_auth->in_group('admin', $this->session->userdata('user_id'))) {
-		$this->template
-					->title('Home', 'Datasiswa || Akuntansi')
-					->set_partial('meta', 'partials/meta')	
-					->set_partial('header', 'partials/header')	
-					->set_partial('sidebar', 'partials/sidebar')
-					->set_partial('bc', 'partials/bc')	
-					->set_partial('content', 'siswa/mm')	
-					->set_partial('footer', 'partials/footer')	
-					->set_partial('js', 'partials/js')	
-					->build('admin');
-				}else{
-			redirect('login','refresh');
-		}
-	}
 
 
 }

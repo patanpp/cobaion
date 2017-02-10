@@ -452,9 +452,9 @@ class Auth extends CI_Controller {
                 'company'    => $this->input->post('company'),
                 'phone'      => $this->input->post('phone'),
             );
-            $group = array('2');
+            $group_name 		= array('2'); //chain
         }
-        if ($this->form_validation->run() == true && $this->ion_auth->register($identity, $password, $email, $additional_data, $group))
+        if ($this->form_validation->run() == true && $this->ion_auth->register($identity, $password, $email, $additional_data,$group_name))
         {
             // check to see if we are creating the user
             // redirect them back to the admin page
@@ -466,8 +466,6 @@ class Auth extends CI_Controller {
             // display the create user form
             // set the flash data error message if there is one
             $this->data['message'] = (validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
-							
-				$this->session->set_flashdata('message', $message);
 
             $this->data['first_name'] = array(
                 'name'  => 'first_name',
@@ -518,7 +516,7 @@ class Auth extends CI_Controller {
                 'value' => $this->form_validation->set_value('password_confirm'),
             );
 
-            $this->_render_page('', $this->data);
+            $this->_render_page('auth/create_user', $this->data);
         }
     }
 
@@ -781,7 +779,7 @@ class Auth extends CI_Controller {
 			'value' => $this->form_validation->set_value('group_description', $group->description),
 		);
 
-		$this->redirect('auth/edit_group', $this->data);
+		$this->_render_page('auth/edit_group', $this->data);
 	}
 
 
@@ -813,10 +811,10 @@ class Auth extends CI_Controller {
 	{
 
 		$this->viewdata = (empty($data)) ? $this->data: $data;
+
 		$view_html = $this->load->view($view, $this->viewdata, $returnhtml);
 
 		if ($returnhtml) return $view_html;//This will return html on 3rd argument being true
 	}
-
 
 }

@@ -31,3 +31,8 @@
   <link rel="stylesheet" href="<?php echo admin_theme_locations();?>dist/css/skins/_all-skins.min.css">
   <link rel="stylesheet" href="<?php echo admin_theme_locations();?>plugins/datatables/dataTables.bootstrap.css">
   <?php } ?>
+
+  <?php if ($this->uri->segment(2)=='siswa')  {?>
+    <link rel="stylesheet" href="<?php echo admin_theme_locations();?>plugins/daterangepicker/daterangepicker.css">
+      <link rel="stylesheet" href="<?php echo admin_theme_locations();?>plugins/datepicker/datepicker3.css">
+  <?php } ?>
